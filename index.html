@@ -114,6 +114,7 @@
           ras.forEach((ra) => {
             ra.remove();
           });
+          element.target.scrollIntoView()
           const a5 = annotate(element.target, {
             type: "bracket",
             color: "red",
