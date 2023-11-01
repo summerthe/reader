@@ -114,7 +114,6 @@
           ras.forEach((ra) => {
             ra.remove();
           });
-          element.target.scrollIntoView()
           const a5 = annotate(element.target, {
             type: "bracket",
             color: "red",
@@ -123,6 +122,10 @@
             strokeWidth: 3,
           });
           a5.show();
+          setTimeout(()=>{
+            element.target.scrollIntoView()
+          },1500)
+          
           // const a3 = annotate(element.target, { type: 'box', color: 'orange' });
           // a3.show();
         });
