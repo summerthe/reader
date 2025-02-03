@@ -41,8 +41,3 @@ async def render_page(request: Request, url: str = Form(None), html_content: str
         )
     else:
         return "No URL or HTML content provided."
-
-# Run the app using Uvicorn
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
