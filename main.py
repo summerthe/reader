@@ -29,7 +29,7 @@ async def render_page(request: Request, url: str = Form(None), html_content: str
         soup = BeautifulSoup(html_content, 'html.parser')
         
         # Remove script and style elements
-        for script_or_style in soup(["script", "style", "header", "footer", "nav", "img"]):
+        for script_or_style in soup(["script", "style", "header", "footer", "nav", "img", "svg", "figure", "i"]):
             script_or_style.decompose()
         
         # Get the cleaned HTML content
