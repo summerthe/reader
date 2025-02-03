@@ -40,4 +40,5 @@ async def render_page(request: Request, url: str = Form(None), html_content: str
             {"request": request, "cleaned_html": cleaned_html}
         )
     else:
+        
         return "No URL or HTML content provided."
