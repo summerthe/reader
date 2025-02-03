@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+
+  <body>
+    <div class="root">
+      {{ cleaned_html | safe }}
+    </div>
+    <a href="/">Back</a>
+
+    <script type="module">
+      import { annotate } from "https://unpkg.com/rough-notation?module";
+      const ps = document.querySelectorAll("p");
+      ps.forEach((p) => {
+        p.addEventListener("click", (element) => {
+          const ras = document.querySelectorAll(".rough-annotation");
+          ras.forEach((ra) => {
+            ra.remove();
+          });
+          const a5 = annotate(element.target, {
+            type: "bracket",
+            color: "red",
+            padding: [2, 10],
+            brackets: ["left", "right"],
+            strokeWidth: 3,
+          });
+          a5.show();
+          setTimeout(()=>{
+            element.target.scrollIntoView()
+          },1500)
+          
+          // const a3 = annotate(element.target, { type: 'box', color: 'orange' });
+          // a3.show();
+        });
+      });
+      // add button to turn off adding annotate notation
+      // clean button to clear annotate notation
+
+      // add annotated element in localhost for unique title
+      // on refresh get element and add annotate notation
+      // scroll to annotate element
+    </script>
+  </body>
+</html>

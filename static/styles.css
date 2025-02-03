@@ -20,7 +20,10 @@ hr {
 }
 pre {
   font-family: monospace, monospace;
-  font-size: 1em;
+  font-size: 1.6em;
+  background-color: rgba(0,0,0,0.1);
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 a {
   background-color: transparent;
